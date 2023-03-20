@@ -67,6 +67,11 @@ export function App() {
               setShowMore(true)
               return
             }
+            if (newValue.id === ''){
+              setShowMore(true)
+              await loadAllTransactions()
+              return
+            }
             setShowMore(false)
             await loadTransactionsByEmployee(newValue.id)
           }}
